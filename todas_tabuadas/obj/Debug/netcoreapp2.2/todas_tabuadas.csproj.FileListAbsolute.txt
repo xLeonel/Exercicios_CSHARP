@@ -1,0 +1,11 @@
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\bin\Debug\netcoreapp2.2\todas_tabuadas.deps.json
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\bin\Debug\netcoreapp2.2\todas_tabuadas.runtimeconfig.json
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\bin\Debug\netcoreapp2.2\todas_tabuadas.runtimeconfig.dev.json
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\bin\Debug\netcoreapp2.2\todas_tabuadas.dll
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\bin\Debug\netcoreapp2.2\todas_tabuadas.pdb
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\obj\Debug\netcoreapp2.2\todas_tabuadas.csprojAssemblyReference.cache
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\obj\Debug\netcoreapp2.2\todas_tabuadas.csproj.CoreCompileInputs.cache
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\obj\Debug\netcoreapp2.2\todas_tabuadas.AssemblyInfoInputs.cache
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\obj\Debug\netcoreapp2.2\todas_tabuadas.AssemblyInfo.cs
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\obj\Debug\netcoreapp2.2\todas_tabuadas.dll
+C:\Users\48171009824\Documents\Exercicios\todas_tabuadas\obj\Debug\netcoreapp2.2\todas_tabuadas.pdb

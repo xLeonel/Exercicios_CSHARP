@@ -50,6 +50,6 @@ namespace Calculadora
                 Console.WriteLine("Use: + , - , * , / ou %");
                 break;
             }
-        }
+        }    
     }
 }

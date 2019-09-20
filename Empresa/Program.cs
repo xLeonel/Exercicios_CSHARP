@@ -4,7 +4,7 @@ namespace Empresa
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             double reajuste = 30.0/100.0;
             double salario;

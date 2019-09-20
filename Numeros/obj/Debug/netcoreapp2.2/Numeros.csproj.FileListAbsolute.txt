@@ -1,0 +1,11 @@
+C:\Users\48171009824\Documents\Exercicios\Numeros\obj\Debug\netcoreapp2.2\Numeros.csprojAssemblyReference.cache
+C:\Users\48171009824\Documents\Exercicios\Numeros\obj\Debug\netcoreapp2.2\Numeros.csproj.CoreCompileInputs.cache
+C:\Users\48171009824\Documents\Exercicios\Numeros\obj\Debug\netcoreapp2.2\Numeros.AssemblyInfoInputs.cache
+C:\Users\48171009824\Documents\Exercicios\Numeros\obj\Debug\netcoreapp2.2\Numeros.AssemblyInfo.cs
+C:\Users\48171009824\Documents\Exercicios\Numeros\bin\Debug\netcoreapp2.2\Numeros.deps.json
+C:\Users\48171009824\Documents\Exercicios\Numeros\bin\Debug\netcoreapp2.2\Numeros.runtimeconfig.json
+C:\Users\48171009824\Documents\Exercicios\Numeros\bin\Debug\netcoreapp2.2\Numeros.runtimeconfig.dev.json
+C:\Users\48171009824\Documents\Exercicios\Numeros\bin\Debug\netcoreapp2.2\Numeros.dll
+C:\Users\48171009824\Documents\Exercicios\Numeros\bin\Debug\netcoreapp2.2\Numeros.pdb
+C:\Users\48171009824\Documents\Exercicios\Numeros\obj\Debug\netcoreapp2.2\Numeros.dll
+C:\Users\48171009824\Documents\Exercicios\Numeros\obj\Debug\netcoreapp2.2\Numeros.pdb

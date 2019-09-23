@@ -12,12 +12,12 @@ namespace todas_tabuadas
             
             for (int num=1; num<=10; num+=1) {
 
-                Console.WriteLine("Tabuada do " + num );
-
                 for (int num2=1; num2 <=10; num2+=1)
                 {
-                    Console.WriteLine($"{num} * {num2} = {num2*num}");
+                    Console.Write($"{num,-2} * {num2,-2} = {num2*num,-3} ");
                 }
+
+                Console.WriteLine("Tabuada do " + num);
                 
             }
         }

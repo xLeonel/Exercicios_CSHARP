@@ -1,0 +1,11 @@
+C:\Users\48171009824\Documents\Exercicios\dojo\obj\Debug\netcoreapp2.2\dojo.csprojAssemblyReference.cache
+C:\Users\48171009824\Documents\Exercicios\dojo\obj\Debug\netcoreapp2.2\dojo.csproj.CoreCompileInputs.cache
+C:\Users\48171009824\Documents\Exercicios\dojo\obj\Debug\netcoreapp2.2\dojo.AssemblyInfoInputs.cache
+C:\Users\48171009824\Documents\Exercicios\dojo\obj\Debug\netcoreapp2.2\dojo.AssemblyInfo.cs
+C:\Users\48171009824\Documents\Exercicios\dojo\bin\Debug\netcoreapp2.2\dojo.deps.json
+C:\Users\48171009824\Documents\Exercicios\dojo\bin\Debug\netcoreapp2.2\dojo.runtimeconfig.json
+C:\Users\48171009824\Documents\Exercicios\dojo\bin\Debug\netcoreapp2.2\dojo.runtimeconfig.dev.json
+C:\Users\48171009824\Documents\Exercicios\dojo\bin\Debug\netcoreapp2.2\dojo.dll
+C:\Users\48171009824\Documents\Exercicios\dojo\bin\Debug\netcoreapp2.2\dojo.pdb
+C:\Users\48171009824\Documents\Exercicios\dojo\obj\Debug\netcoreapp2.2\dojo.dll
+C:\Users\48171009824\Documents\Exercicios\dojo\obj\Debug\netcoreapp2.2\dojo.pdb

@@ -7,29 +7,36 @@ namespace temperatura
         static void Main(string[] args)
         {
 
-            double[] numeros = new double[12];
-            double maior = 0;
-            double menor = 9999999999;
+            double[] temperatura = new double[12];
 
-            for (int i = 0; i <= 11; i++)
+            for (int i = 0; i < 12; i++)
             {
                 Console.Write("Digite " + (i + 1) + "º temperatura: ");
-                numeros[i] = double.Parse(Console.ReadLine());
-
-                if (numeros[i] < menor)
-                {
-                    menor = numeros[i];
-                    
-                }
-                else if (numeros[i] > maior)
-                {              
-                    maior = numeros[i];
-     
-                }
-
+                temperatura[i] = double.Parse(Console.ReadLine());
             }
-            Console.WriteLine("O maior numero é " + maior);
-            Console.WriteLine("O menor numero é " + menor);
+
+            double maior = temperatura[0];
+            double menor = temperatura[0];
+
+
+            foreach (double temp in temperatura)
+            {
+
+
+                if (temp > maior)
+                {
+                    maior = temp;
+
+                }
+                else if (temp < menor)
+                {
+                    menor = temp;
+
+                }
+            }
+
+            Console.WriteLine($"O maior numero é  {maior}");
+            Console.WriteLine($"O menor numero é  {menor}");
         }
     }
 }

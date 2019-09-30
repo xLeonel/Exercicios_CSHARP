@@ -46,7 +46,7 @@ namespace Aluno
             }
             else
             {
-                this.Notas[Nota] = nota;
+                this.Notas[bi] = nota;
             }
 
         }

@@ -30,14 +30,14 @@ namespace Aluno
             Console.Write("Entre com o Bimestre: ");
             int bimestre = int.Parse(Console.ReadLine());
             Aluno aluno3 = new Aluno(Nome,Cpf,Curso);
-            aluno3.setNotas(bimestre,nota);
+            aluno3.setNotas(bimestre,Nota);
 
             Console.WriteLine("Nome: " + aluno3.Nome);
             Console.WriteLine("Curso: " + aluno3.Curso);
             Console.WriteLine("Curso: " + aluno3.Cpf);
             Console.WriteLine("Notas: ");
             foreach (int n in aluno3.getNotas()){
-               Console.Write(nota + " ");
+               Console.Write(Nota + " ");
             }
             Console.WriteLine();
         }

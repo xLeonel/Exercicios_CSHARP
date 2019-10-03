@@ -187,11 +187,7 @@ namespace MateODragao
                 }
             } while (jogadorNaoDesistiu);
 
-
             // FIM-MENU
-
-
-
         }
 
         public static void CriarDialogo(string nome, string frase)
@@ -236,6 +232,4 @@ namespace MateODragao
             return dragao;
         }
     }
-
-
 }

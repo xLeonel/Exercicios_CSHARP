@@ -31,6 +31,10 @@ namespace byteBank.Models
                 return false;
             }
         }
-        
+
+        public static implicit operator Cliente(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

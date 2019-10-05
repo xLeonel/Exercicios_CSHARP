@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "byteBank/1.0.0": {
+      "Byte-Bank/1.0.0": {
         "runtime": {
-          "byteBank.dll": {}
+          "Byte-Bank.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "byteBank/1.0.0": {
+    "Byte-Bank/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

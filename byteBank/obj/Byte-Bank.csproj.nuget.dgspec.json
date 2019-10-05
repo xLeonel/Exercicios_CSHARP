@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48171009824\\Documents\\Exercicios\\byteBank\\byteBank.csproj": {}
+    "C:\\Users\\vitor\\Documents\\Exercicios\\byteBank\\Byte-Bank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48171009824\\Documents\\Exercicios\\byteBank\\byteBank.csproj": {
+    "C:\\Users\\vitor\\Documents\\Exercicios\\byteBank\\Byte-Bank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48171009824\\Documents\\Exercicios\\byteBank\\byteBank.csproj",
-        "projectName": "byteBank",
-        "projectPath": "C:\\Users\\48171009824\\Documents\\Exercicios\\byteBank\\byteBank.csproj",
-        "packagesPath": "C:\\Users\\48171009824\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48171009824\\Documents\\Exercicios\\byteBank\\obj\\",
+        "projectUniqueName": "C:\\Users\\vitor\\Documents\\Exercicios\\byteBank\\Byte-Bank.csproj",
+        "projectName": "Byte-Bank",
+        "projectPath": "C:\\Users\\vitor\\Documents\\Exercicios\\byteBank\\Byte-Bank.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vitor\\Documents\\Exercicios\\byteBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\48171009824\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

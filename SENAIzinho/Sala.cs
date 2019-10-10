@@ -15,17 +15,30 @@ namespace SENAIzinho
             this.capacidadeTotal = capacidadeTotal;
         }
 
-        public void AlocarAluno (string[] Alunos)
+        public string AlocarAluno(string nomeAluno)
         {
             if ( capacidadeAtual < capacidadeTotal)
             {
-                capacidadeAtual = capacidadeAtual -1;
-                Alunos[capacidadeTotal - capacidadeAtual] = Alunos[0];
+                this.Alunos = new string[10];
+                Alunos[0] = nomeAluno;
+                System.Console.WriteLine("Cadastrado com sucesso.");
             }
             else 
             {
                 System.Console.WriteLine("Sala Cheia.");
             }
+            return "Alunos";
+        }
+
+        // public string RemoverAluno (string)
+        // {
+
+        // }
+        
+        public string MostrarAlunos() 
+        {
+
+            return Alunos[0];
         }
 
     }

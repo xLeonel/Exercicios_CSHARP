@@ -7,9 +7,7 @@ namespace SENAIzinho
         static void Main(string[] args)
         {
            
-            int limiteSalas = 10;
             
-            int salasCadastradas = 0;
             bool querSair = true;
             //*Var */
 
@@ -88,46 +86,56 @@ namespace SENAIzinho
             int limiteAlunos = 100;
             int alunosCadastrados = 0;
 
-            if (alunosCadastrados <= limiteAlunos)
+            if (alunosCadastrados < limiteAlunos)
             {
-            System.Console.WriteLine("Digite o nome do Aluno: ");
-            string nomeAluno = Console.ReadLine();
-            System.Console.WriteLine("Digite a idade do Aluno: ");
-            int idadeAluno = int.Parse(Console.ReadLine());
-            Aluno aluno1 = new Aluno(nomeAluno, idadeAluno);
-
-            
-            Sala.AlocarAluno();
-            System.Console.WriteLine("Cadastrado com sucesso.");
-            alunosCadastrados += 1;
+                System.Console.Write("Digite o nome do Aluno: ");
+                string nomeAluno = Console.ReadLine();
+                System.Console.Write("Digite a idade do Aluno: ");
+                int idadeAluno = int.Parse(Console.ReadLine());
+                Aluno aluno1 = new Aluno(nomeAluno, idadeAluno);
+                Sala sala1 = new Sala(1,10);
+                sala1.AlocarAluno(nomeAluno);
+                
             }
             else 
             {
-                System.Console.WriteLine("Escola cheia!");
+                
             }
 
-
-
+            System.Console.WriteLine();
         }
 
         public static void CadastrarSala()
         {
-            Sala[] salas = new Sala[10];
-            System.Console.WriteLine("Digite o número da Sala: ");
-            int numeroSala = int.Parse(Console.ReadLine());
+            int limiteSalas = 10;
+            int salasCadastradas = 0;
 
+            Sala[] salas = new Sala[10];
+            System.Console.Write("Digite o número da Sala: ");
+            int numeroSala = int.Parse(Console.ReadLine());
 
             Sala sala1 = new Sala(numeroSala, 10);
 
+            salasCadastradas +=1;
+            if ( salasCadastradas <= limiteSalas)
+            {
+            System.Console.WriteLine("Sala Cadastrada");
+            } 
+            else 
+            {
+                System.Console.WriteLine("Nao pode criar mais salas.");
+            }
+            System.Console.WriteLine();
 
         }
 
         public static void AlocarAluno()
         {
-            System.Console.WriteLine("Digite o nome do Aluno: ");
+            System.Console.Write("Digite o nome do Aluno: ");
             string nomeAluno = Console.ReadLine();
-            System.Console.WriteLine("Digite a sala que o aluno esta: ");
+            System.Console.Write("Digite a sala que o aluno esta: ");
             int numeroSala = int.Parse(Console.ReadLine());
+
 
         }
 

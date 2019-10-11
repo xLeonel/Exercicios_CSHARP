@@ -8,6 +8,11 @@ namespace SENAIzinho
         public DateTime DataNascimento;
         public string Curso;
         public int numeroSala;
+
+        public Aluno(string Nome)
+        {
+            this.Nome = Nome;
+        }
     }
 
 }

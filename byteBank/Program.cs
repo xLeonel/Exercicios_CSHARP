@@ -19,6 +19,7 @@ namespace Byte_Bank
             string email = Console.ReadLine();
 
             Cliente cliente1 = new Cliente(nome, cpf, email);
+            
             bool trocousenha = false;
 
             do

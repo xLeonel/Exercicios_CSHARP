@@ -9,14 +9,3 @@ C:\Users\48171009824\Documents\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SEN
 C:\Users\48171009824\Documents\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SENAIzinho.pdb
 C:\Users\48171009824\Documents\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.dll
 C:\Users\48171009824\Documents\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.pdb
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SENAIzinho.deps.json
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SENAIzinho.runtimeconfig.json
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SENAIzinho.runtimeconfig.dev.json
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SENAIzinho.dll
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\bin\Debug\netcoreapp2.2\SENAIzinho.pdb
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.csprojAssemblyReference.cache
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.csproj.CoreCompileInputs.cache
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.AssemblyInfoInputs.cache
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.AssemblyInfo.cs
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.dll
-C:\Users\vitor\Desktop\Exercicios\SENAIzinho\obj\Debug\netcoreapp2.2\SENAIzinho.pdb

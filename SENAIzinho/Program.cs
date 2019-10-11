@@ -6,21 +6,25 @@ namespace SENAIzinho
     {
         static void Main(string[] args)
         {
-           
+            int limiteAlunos = 10;
+            int limiteSalas = 10;
+            int totalAlunos = 100;
+            Aluno[] alunos = new Aluno[100];
+            Sala[] salas = new Sala[10];
+
+            int alunosCadastrados = 0;
+            int salasCadastradas = 0;
+
+           bool querSair = false;
             
-            bool querSair = true;
-            //*Var */
 
-            System.Console.WriteLine("==============================");
-            System.Console.WriteLine("         SENAIzinho");
-            System.Console.WriteLine("==============================");
-            System.Console.WriteLine();
-
-            //* MENU */
-
+            #region MENUZAO 
             do
             {
-
+                System.Console.WriteLine("==============================");
+                System.Console.WriteLine("         SENAIzinho");
+                System.Console.WriteLine("==============================");
+                System.Console.WriteLine();
                 System.Console.WriteLine("1 - Cadastrar Aluno");
                 System.Console.WriteLine("2 - Cadastrar Sala");
                 System.Console.WriteLine("3 - Alocar Aluno");
@@ -34,9 +38,8 @@ namespace SENAIzinho
                 {
                     case "1":
                         Console.Clear();
-                        System.Console.WriteLine("Cadastrar Aluno");
                         System.Console.WriteLine();
-                        CadastrarAluno();
+                        CadastrarAluno(alunos,totalAlunos,alunosCadastrados);
                         break;
                     case "2":
                         Console.Clear();
@@ -69,8 +72,7 @@ namespace SENAIzinho
                         VerificarAlunos();
                         break;
                     case "0":
-                        System.Console.WriteLine("Tchau!");
-                        querSair = false;
+                        System.Console.WriteLine("Ate a próxima!");
                         System.Console.WriteLine();
                         break;
                     default:
@@ -79,63 +81,58 @@ namespace SENAIzinho
                 }
 
             } while (querSair);
+            #endregion
         }
 
-        public static void CadastrarAluno()
+        public static void CadastrarAluno(Aluno[] alunos, int totalAlunos, int alunosCadastrados)
         {
-            int limiteAlunos = 100;
-            int alunosCadastrados = 0;
-
-            if (alunosCadastrados < limiteAlunos)
+            if (alunosCadastrados < totalAlunos)
             {
-                System.Console.Write("Digite o nome do Aluno: ");
+                System.Console.WriteLine("Cadastro de Aluno");
+                System.Console.WriteLine();
+                System.Console.Write("Nome: ");
                 string nomeAluno = Console.ReadLine();
-                System.Console.Write("Digite a idade do Aluno: ");
-                int idadeAluno = int.Parse(Console.ReadLine());
-                Aluno aluno1 = new Aluno(nomeAluno, idadeAluno);
-                Sala sala1 = new Sala(1,10);
-                sala1.AlocarAluno(nomeAluno);
-                
-            }
-            else 
-            {
-                
-            }
+                System.Console.Write("Data de nascimento: ");
+                DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
 
-            System.Console.WriteLine();
+                Aluno novoAluno = new Aluno();
+                novoAluno.Nome = nomeAluno;
+                novoAluno.DataNascimento = dataNascimento;
+
+                int index = 0;
+                foreach (Aluno aluno in alunos)
+                {
+                    if (aluno == null)
+                    {
+                        alunos[index] = novoAluno;
+                        break;
+                    }
+                    index++;
+                }
+                alunosCadastrados++;
+            }
         }
 
         public static void CadastrarSala()
         {
-            int limiteSalas = 10;
-            int salasCadastradas = 0;
-
-            Sala[] salas = new Sala[10];
-            System.Console.Write("Digite o número da Sala: ");
+            Sala[] salasEscola = new Sala[10];
+            System.Console.WriteLine("Digite o número da Sala: ");
             int numeroSala = int.Parse(Console.ReadLine());
 
+
             Sala sala1 = new Sala(numeroSala, 10);
+            
 
-            salasCadastradas +=1;
-            if ( salasCadastradas <= limiteSalas)
-            {
+            salasEscola[0] = sala1;
             System.Console.WriteLine("Sala Cadastrada");
-            } 
-            else 
-            {
-                System.Console.WriteLine("Nao pode criar mais salas.");
-            }
-            System.Console.WriteLine();
-
         }
 
         public static void AlocarAluno()
         {
-            System.Console.Write("Digite o nome do Aluno: ");
+            System.Console.WriteLine("Digite o nome do Aluno: ");
             string nomeAluno = Console.ReadLine();
-            System.Console.Write("Digite a sala que o aluno esta: ");
+            System.Console.WriteLine("Digite a sala que o aluno esta: ");
             int numeroSala = int.Parse(Console.ReadLine());
-
 
         }
 
@@ -151,12 +148,16 @@ namespace SENAIzinho
             for (int i = 0; i < 10; i++)
             {
                 System.Console.WriteLine($"Sala {i + 1}");
+                for (int k = 0; k < 10; i++)
+                {
+                    System.Console.WriteLine($"Aluno: ");
+                }
             }
         }
 
         public static void VerificarAlunos()
         {
-        
+
         }
 
 

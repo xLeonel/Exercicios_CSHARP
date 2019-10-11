@@ -28,8 +28,7 @@ namespace Aluno
         }
 
         // metodos de acesso
-        public int[] getNotas() 
-        { return Notas; }
+        public int[] getNotas() { return Notas; }
 
         public void setNotas(int bi, int nota)
         {

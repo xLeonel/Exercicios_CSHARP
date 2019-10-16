@@ -177,10 +177,6 @@ namespace SENAIzinho
             for (int i = 0; i < 10; i++)
             {
                 System.Console.WriteLine($"Sala {i + 1}");
-                for (int k = 0; k < 10; i++)
-                {
-                    System.Console.WriteLine($"Aluno: ");
-                }
             }
         }
 

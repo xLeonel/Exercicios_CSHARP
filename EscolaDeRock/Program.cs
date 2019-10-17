@@ -39,7 +39,7 @@ namespace EscolaDeRock
             var opçoesFormacao = new List<string>()
             {
                 "     - 0                            ",
-                "     - 1                            "
+                "     - 1                            ",
             };
 
             int opçaoFormaçaoSelecionada = 0;
@@ -52,9 +52,8 @@ namespace EscolaDeRock
                 do
                 {
                     Console.Clear();
-                    System.Console.WriteLine(menuBar);
-                    System.Console.BackgroundColor = ConsoleColor.DarkCyan;
-                    System.Console.BackgroundColor = ConsoleColor.Black;
+                    System.Console.WriteLine(menuBar);   
+                    System.Console.BackgroundColor = ConsoleColor.White;
                     System.Console.WriteLine("    Seja Bem-Vindo         ");
                     System.Console.WriteLine("    Escolha uma formção:   ");
                     Console.ResetColor();
@@ -88,11 +87,11 @@ namespace EscolaDeRock
                         break;
 
                         case ConsoleKey.Enter:
-                        formaçaoEscolhida = true;
+                        formaçaoEscolhida = false;
                         break;
                     }
 
-                } while (true);
+                } while (formaçaoEscolhida);
             } while (!querSair);
         }
     }

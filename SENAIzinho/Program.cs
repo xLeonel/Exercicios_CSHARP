@@ -39,13 +39,13 @@ namespace SENAIzinho
                     case "1":
                         Console.Clear();
                         System.Console.WriteLine();
-                        CadastrarAluno(alunos, totalAlunos, ref alunosCadastrados);
+                        CadastrarAluno(ref alunos, totalAlunos, ref alunosCadastrados);
                         break;
                     case "2":
                         Console.Clear();
                         System.Console.WriteLine("Cadastrar Sala");
                         System.Console.WriteLine();
-                        CadastrarSala(salas, limiteSalas, ref salasCadastradas);
+                        CadastrarSala(ref salas, limiteSalas, ref salasCadastradas);
                         break;
                     case "3":
                         Console.Clear();
@@ -57,19 +57,19 @@ namespace SENAIzinho
                         Console.Clear();
                         System.Console.WriteLine("Remover Aluno");
                         System.Console.WriteLine();
-                        RemoverAluno();
+                        RemoverAluno(ref alunos, ref salas);
                         break;
                     case "5":
                         Console.Clear();
                         System.Console.WriteLine("Verificar Salas");
                         System.Console.WriteLine();
-                        VerificarSalas();
+                        VerificarSalas(salas);
                         break;
                     case "6":
                         Console.Clear();
                         System.Console.WriteLine("Verificar Alunos");
                         System.Console.WriteLine();
-                        VerificarAlunos();
+                        VerificarAlunos(alunos);
                         break;
                     case "0":
                         System.Console.WriteLine("Ate a próxima!");
@@ -85,7 +85,7 @@ namespace SENAIzinho
             #endregion
         }
 
-        public static void CadastrarAluno(Aluno[] alunos, int totalAlunos, ref int alunosCadastrados)
+        public static void CadastrarAluno(ref Aluno[] alunos, int totalAlunos, ref int alunosCadastrados)
         {
             if (alunosCadastrados < totalAlunos)
             {
@@ -125,7 +125,7 @@ namespace SENAIzinho
             }
         }
 
-        public static void CadastrarSala(Sala[] salas, int limiteSalas, ref int salasCadastradas)
+        public static void CadastrarSala(ref Sala[] salas, int limiteSalas, ref int salasCadastradas)
         {
             if (salasCadastradas < limiteSalas)
             {
@@ -147,32 +147,64 @@ namespace SENAIzinho
 
                 salasCadastradas++;
                 System.Console.WriteLine("Sala Cadastrada");
+                Console.ReadLine();
+
             }
             else
             {
                 System.Console.WriteLine("Escola está com o máximo de salas.");
+                Console.ReadLine();
+
             }
         }
 
         public static void AlocarAluno(Aluno[] alunos, Sala[] salas)
         {
-            System.Console.WriteLine("Digite o nome do Aluno: ");
+            System.Console.Write("Digite o nome do Aluno: ");
             string nomeAluno = Console.ReadLine();
-            System.Console.WriteLine("Digite a sala que o aluno esta: ");
+            System.Console.Write("Digite a sala que o aluno vai ser colocado: ");
             int numeroSala = int.Parse(Console.ReadLine());
 
-            
 
+            foreach (Aluno aluno in alunos)
+            {
+                if (aluno.Nome == nomeAluno)
+                {
+                    foreach (Sala sala in salas)
+                    {
+                        if (sala.numeroSala == numeroSala)
+                        {
+                            sala.AlocarAluno(nomeAluno);
+                        }
+                    }
+                }
+            }
         }
 
-        public static void RemoverAluno()
+        public static void RemoverAluno(ref Aluno[] alunos, ref Sala[] salas)
         {
             System.Console.WriteLine("Digite o nome do Aluno: ");
             string nomeAluno = Console.ReadLine();
 
+            foreach (Aluno aluno in alunos)
+            {
+                if (aluno.Nome == nomeAluno)
+                {
+                    foreach (Sala sala in salas)
+                    {
+                        for (int i = 0; i < 9; i++)
+                        {
+                            if (sala.Alunos[i] == nomeAluno)
+                            {
+                                sala.RemoverAluno(nomeAluno);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        public static void VerificarSalas()
+        public static void VerificarSalas(Sala[] salas)
         {
             for (int i = 0; i < 10; i++)
             {
@@ -180,12 +212,9 @@ namespace SENAIzinho
             }
         }
 
-        public static void VerificarAlunos()
+        public static void VerificarAlunos(Aluno[] alunos)
         {
 
         }
-
-
     }
-
 }

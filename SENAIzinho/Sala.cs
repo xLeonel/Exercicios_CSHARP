@@ -16,25 +16,25 @@ namespace SENAIzinho
             this.capacidadeAtual = this.capacidadeTotal;
             this.Alunos = new string[capacidadeTotal];
         }
-        
+
         public string AlocarAluno(string nomeAluno)
         {
             int index = 0;
             if (this.capacidadeAtual > 0)
             {
-                foreach (string aluno in this.Alunos)
+                foreach (string item in this.Alunos)
                 {
-                    if (aluno == "")
+                    if (item != "")
                     {
-                        this.Alunos[index] = nomeAluno;
+                        index++;
                         break;
                     }
-                    index++;
+                    this.Alunos[index] = nomeAluno;
                 }
                 this.capacidadeAtual--;
                 return "Cadastro com Sucesso";
             }
-            else 
+            else
             {
                 return "Sala cheia";
             }
@@ -58,7 +58,7 @@ namespace SENAIzinho
                 }
                 index++;
             }
-             return "Aluno não encontrado.";
+            return "Aluno não encontrado.";
         }
 
         public string MostrarAluno()
@@ -66,7 +66,7 @@ namespace SENAIzinho
             string listaAlunos = "";
             foreach (string aluno in this.Alunos)
             {
-                if(aluno != "")
+                if (aluno != "")
                 {
                     listaAlunos = listaAlunos + aluno + " ";
                 }

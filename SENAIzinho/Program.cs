@@ -6,7 +6,7 @@ namespace SENAIzinho
     {
         static void Main(string[] args)
         {
-            int limiteAlunos = 10;
+            // int limiteAlunos = 10;
             int limiteSalas = 10;
             int totalAlunos = 100;
             Aluno[] alunos = new Aluno[100];
@@ -63,13 +63,13 @@ namespace SENAIzinho
                         Console.Clear();
                         System.Console.WriteLine("Verificar Salas");
                         System.Console.WriteLine();
-                        VerificarSalas(salas);
+                        VerificarSalas();
                         break;
                     case "6":
                         Console.Clear();
                         System.Console.WriteLine("Verificar Alunos");
                         System.Console.WriteLine();
-                        VerificarAlunos(alunos);
+                        VerificarAlunos(ref alunos);
                         break;
                     case "0":
                         System.Console.WriteLine("Ate a próxima!");
@@ -176,7 +176,15 @@ namespace SENAIzinho
                         {
                             sala.AlocarAluno(nomeAluno);
                         }
+                        else
+                        {
+                            System.Console.WriteLine("Sala não encontrado");
+                        }
                     }
+                }
+                else
+                {
+                    System.Console.WriteLine("Aluno não encontrado.");
                 }
             }
         }
@@ -204,17 +212,24 @@ namespace SENAIzinho
             }
         }
 
-        public static void VerificarSalas(Sala[] salas)
+        public static void VerificarSalas()
         {
-            for (int i = 0; i < 10; i++)
-            {
-                System.Console.WriteLine($"Sala {i + 1}");
-            }
+
         }
 
-        public static void VerificarAlunos(Aluno[] alunos)
+        public static void VerificarAlunos(ref Aluno[] alunos)
         {
-
+            Console.Clear();
+            System.Console.WriteLine("Lista de alunos matriculados:");
+            int count = 1;
+            foreach (Aluno aluno in alunos)
+            {
+                if (aluno != null)
+                {
+                    System.Console.WriteLine($"ID{count,2}: {aluno.Nome,-15}");
+                    count++;
+                }
+            }
         }
     }
 }

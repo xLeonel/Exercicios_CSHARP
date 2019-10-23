@@ -1,41 +1,39 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace byteBankTest.Models
+namespace ByteBank2.Models
 {
     public class ContaEspecial : ContaBancaria
     {
         public double Limite;
 
-        public ContaEspecial (int Agencia, int NumeroConta, string Titular) : base (Agencia, NumeroConta, Titular)
+        public ContaEspecial(int Agencia, int NumeroConta, string Titular) : base(Agencia, NumeroConta, Titular)
         {
-            this.Limite = 0.0;
+            Limite = 0.0;
         }
 
-        public bool SetLimite (double Limite)
+        public bool SetLimite(double Valor)
         {
-            if (Limite >= 0)
+            if(Valor >= 0)
             {
-                this.Limite = Limite;
+                Limite = Valor;
                 return true;
             }
-            else
-            {
-                return  false;
-            }
+            return false;
         }
 
         public override bool Saque(double Valor)
         {
-            if (Valor >= 0)
+            if(Valor >= 0)
             {
-                if (Valor <= Saldo + this.Limite)
+                if(Valor <= Saldo + Limite)
                 {
-                    this.Saldo -= Valor;
+                    Saldo -= Valor;
                     return true;
                 }
             }
             return false;
         }
-
     }
 }

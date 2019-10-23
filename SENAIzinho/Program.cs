@@ -221,7 +221,7 @@ namespace SENAIzinho
         {
             Console.Clear();
             System.Console.WriteLine("Lista de alunos matriculados:");
-            int count = 1;
+            int count = 0;
             foreach (Aluno aluno in alunos)
             {
                 if (aluno != null)

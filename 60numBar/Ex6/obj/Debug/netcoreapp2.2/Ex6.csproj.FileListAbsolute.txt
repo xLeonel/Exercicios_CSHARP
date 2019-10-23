@@ -1,0 +1,11 @@
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\bin\Debug\netcoreapp2.2\Ex6.deps.json
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\bin\Debug\netcoreapp2.2\Ex6.runtimeconfig.json
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\bin\Debug\netcoreapp2.2\Ex6.runtimeconfig.dev.json
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\bin\Debug\netcoreapp2.2\Ex6.dll
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\bin\Debug\netcoreapp2.2\Ex6.pdb
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\obj\Debug\netcoreapp2.2\Ex6.csprojAssemblyReference.cache
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\obj\Debug\netcoreapp2.2\Ex6.csproj.CoreCompileInputs.cache
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\obj\Debug\netcoreapp2.2\Ex6.AssemblyInfoInputs.cache
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\obj\Debug\netcoreapp2.2\Ex6.AssemblyInfo.cs
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\obj\Debug\netcoreapp2.2\Ex6.dll
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex6\obj\Debug\netcoreapp2.2\Ex6.pdb

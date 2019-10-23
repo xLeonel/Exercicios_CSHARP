@@ -2,3 +2,10 @@ C:\Users\48171009824\Documents\Exercicios\byteBankTest\obj\Debug\netcoreapp2.2\b
 C:\Users\48171009824\Documents\Exercicios\byteBankTest\obj\Debug\netcoreapp2.2\byteBankTest.csproj.CoreCompileInputs.cache
 C:\Users\48171009824\Documents\Exercicios\byteBankTest\obj\Debug\netcoreapp2.2\byteBankTest.AssemblyInfoInputs.cache
 C:\Users\48171009824\Documents\Exercicios\byteBankTest\obj\Debug\netcoreapp2.2\byteBankTest.AssemblyInfo.cs
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\bin\Debug\netcoreapp2.2\byteBankTest.deps.json
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\bin\Debug\netcoreapp2.2\byteBankTest.runtimeconfig.json
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\bin\Debug\netcoreapp2.2\byteBankTest.runtimeconfig.dev.json
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\bin\Debug\netcoreapp2.2\byteBankTest.dll
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\bin\Debug\netcoreapp2.2\byteBankTest.pdb
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\obj\Debug\netcoreapp2.2\byteBankTest.dll
+C:\Users\48171009824\Documents\Exercicios\byteBankTest\obj\Debug\netcoreapp2.2\byteBankTest.pdb

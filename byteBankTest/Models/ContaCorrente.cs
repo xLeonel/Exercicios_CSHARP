@@ -1,17 +1,21 @@
-namespace byteBankTest.Models
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ByteBank2.Models
 {
     public class ContaCorrente : ContaBancaria
     {
-        public ContaCorrente(int Agencia, int NumeroConta, string Titular) : base(Agencia, NumeroConta, Titular)
+        public ContaCorrente(int Agencia, int NumeroConta, string Titular) : base(Agencia,NumeroConta,Titular)
         {
 
         }
 
         public override bool Saque(double Valor)
         {
-            if (Valor >= 0)
+            if(Valor >= 0)
             {
-                if (Valor <= Saldo)
+                if(Valor <= this.Saldo)
                 {
                     this.Saldo -= Valor;
                     return true;
@@ -21,11 +25,7 @@ namespace byteBankTest.Models
                     return false;
                 }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
-
     }
 }

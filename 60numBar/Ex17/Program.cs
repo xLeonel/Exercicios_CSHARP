@@ -6,7 +6,10 @@ namespace Ex17
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            for (int i = 120; i <= 300; i++)
+            {
+                System.Console.Write($"{i} ");
+            }
         }
     }
 }

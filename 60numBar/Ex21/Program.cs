@@ -6,7 +6,17 @@ namespace Ex21
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int[] notas = { 100, 50, 20, 10, 5};
+            System.Console.WriteLine("Digite um valor à ser sacado: ");
+            int saque = int.Parse(Console.ReadLine());
+
+            
+
+            
+
+
+
         }
     }
 }
+

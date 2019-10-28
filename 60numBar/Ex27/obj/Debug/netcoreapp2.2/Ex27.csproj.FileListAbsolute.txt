@@ -1,0 +1,11 @@
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\bin\Debug\netcoreapp2.2\Ex27.deps.json
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\bin\Debug\netcoreapp2.2\Ex27.runtimeconfig.json
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\bin\Debug\netcoreapp2.2\Ex27.runtimeconfig.dev.json
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\bin\Debug\netcoreapp2.2\Ex27.dll
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\bin\Debug\netcoreapp2.2\Ex27.pdb
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\obj\Debug\netcoreapp2.2\Ex27.csprojAssemblyReference.cache
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\obj\Debug\netcoreapp2.2\Ex27.csproj.CoreCompileInputs.cache
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\obj\Debug\netcoreapp2.2\Ex27.AssemblyInfoInputs.cache
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\obj\Debug\netcoreapp2.2\Ex27.AssemblyInfo.cs
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\obj\Debug\netcoreapp2.2\Ex27.dll
+C:\Users\48171009824\Documents\Exercicios\60numBar\Ex27\obj\Debug\netcoreapp2.2\Ex27.pdb

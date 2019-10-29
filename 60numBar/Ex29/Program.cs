@@ -12,6 +12,7 @@ namespace Ex29
 
             do
             {
+                Console.Clear();
                 System.Console.WriteLine("Agenda Telefonica");
                 System.Console.WriteLine();
                 System.Console.WriteLine(" 1 - Cadastrar agenda");
@@ -19,6 +20,7 @@ namespace Ex29
                 System.Console.WriteLine(" 3 - Procurar agenda");
                 System.Console.WriteLine(" 4 - Listar todas agendas");
                 System.Console.WriteLine(" 0 - Sair");
+                System.Console.WriteLine();
                 int opçaoUser = int.Parse(Console.ReadLine());
 
                 switch (opçaoUser)
@@ -34,6 +36,7 @@ namespace Ex29
                         break;
                     case 4:
                         ListarAgendas(allAgendas);
+                        Console.ReadLine();
                         break;
                     case 0:
                         querSair = true;
@@ -68,22 +71,30 @@ namespace Ex29
             Console.Clear();
             System.Console.WriteLine("Remover Agenda");
             System.Console.WriteLine();
+            ListarAgendas(allAgendas);
             System.Console.Write("Digite um Nome: ");
             string nome = Console.ReadLine();
+
+            bool antiBug = false;
 
             foreach (var item in allAgendas)
             {
                 if (nome == item.Nome)
                 {
                     allAgendas.Remove(item);
-                    System.Console.WriteLine("Agenda removida"); 
+                    antiBug = true;
                     break;
                 }
-                else
-                {
-                    System.Console.WriteLine("Agenda não encontrada");
-                }
             }
+            if (antiBug)
+            {
+                System.Console.WriteLine("Agenda removida");
+            }
+            else
+            {
+                System.Console.WriteLine("Agenda não encontrada");
+            }
+
             Console.ReadLine();
         }
 
@@ -95,17 +106,29 @@ namespace Ex29
             System.Console.Write("Digite um Nome: ");
             string nome = Console.ReadLine();
 
+            bool antiBug = false;
+            string telefone = "";
+            string aniversário = "";
+
+
             foreach (var item in allAgendas)
             {
                 if (nome == item.Nome)
                 {
-                    System.Console.WriteLine($"Nome: {item.Nome} | Telefone: {item.Telefone} | Aniversário: {item.Aniversario}");
+                    nome = item.Nome;
+                    telefone = item.Telefone;
+                    aniversário = item.Aniversario;
+                    antiBug = true;
                     break;
                 }
-                else
-                {
-                    System.Console.WriteLine("Agenda não encontrada");
-                }
+            }
+            if (antiBug)
+            {
+                System.Console.WriteLine($"Nome: {nome} | Telefone: {telefone} | Aniversário: {aniversário}");
+            }
+            else
+            {
+                System.Console.WriteLine("Agenda não encontrada");
             }
             Console.ReadLine();
         }
@@ -117,8 +140,6 @@ namespace Ex29
             {
                 System.Console.WriteLine($"Nome: {item.Nome} | Telefone: {item.Telefone} | Aniversário: {item.Aniversario} ");
             }
-            Console.ReadLine();
-
         }
     }
 }

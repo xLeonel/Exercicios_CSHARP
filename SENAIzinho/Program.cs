@@ -6,16 +6,13 @@ namespace SENAIzinho
     {
         static void Main(string[] args)
         {
-            // int limiteAlunos = 10;
             int limiteSalas = 10;
             int totalAlunos = 100;
-            Aluno[] alunos = new Aluno[100];
+            Aluno[] alunos = new Aluno[5];
             Sala[] salas = new Sala[10];
-
             int alunosCadastrados = 0;
             int salasCadastradas = 0;
-
-            bool querSair = true;
+            bool querSair = false;
 
 
             #region MENUZAO 
@@ -37,179 +34,123 @@ namespace SENAIzinho
                 switch (opçaoMenu)
                 {
                     case "1":
-                        Console.Clear();
-                        System.Console.WriteLine();
-                        CadastrarAluno(ref alunos, totalAlunos, ref alunosCadastrados);
+                        CadastrarAluno(ref alunos, ref alunosCadastrados, totalAlunos);
                         break;
                     case "2":
-                        Console.Clear();
-                        System.Console.WriteLine("Cadastrar Sala");
-                        System.Console.WriteLine();
-                        CadastrarSala(ref salas, limiteSalas, ref salasCadastradas);
+                        CadastrarSala(ref salas, ref salasCadastradas, limiteSalas);
                         break;
                     case "3":
-                        Console.Clear();
-                        System.Console.WriteLine("Alocar Aluno");
-                        System.Console.WriteLine();
-                        AlocarAluno(alunos, salas);
+                        AlocarAluno();
                         break;
                     case "4":
-                        Console.Clear();
-                        System.Console.WriteLine("Remover Aluno");
-                        System.Console.WriteLine();
-                        RemoverAluno(ref alunos, ref salas);
+                        RemoverAluno();
                         break;
                     case "5":
-                        Console.Clear();
-                        System.Console.WriteLine("Verificar Salas");
-                        System.Console.WriteLine();
                         VerificarSalas();
                         break;
                     case "6":
-                        Console.Clear();
-                        System.Console.WriteLine("Verificar Alunos");
-                        System.Console.WriteLine();
-                        VerificarAlunos(ref alunos);
+                        VerificarAlunos(alunos);
                         break;
                     case "0":
                         System.Console.WriteLine("Ate a próxima!");
-                        querSair = false;
-                        System.Console.WriteLine();
+                        querSair = true;
                         break;
                     default:
                         System.Console.WriteLine("Opção Inválida.");
                         break;
                 }
 
-            } while (querSair != false);
+            } while (!querSair);
             #endregion
         }
 
-        public static void CadastrarAluno(ref Aluno[] alunos, int totalAlunos, ref int alunosCadastrados)
+        public static void CadastrarAluno(ref Aluno[] alunos, ref int alunosCadastrados, int totalAlunos)
         {
+            Console.Clear();
             if (alunosCadastrados < totalAlunos)
             {
                 System.Console.WriteLine("Cadastro de Aluno");
                 System.Console.WriteLine();
-                System.Console.Write("Nome: ");
-                string nomeAluno = Console.ReadLine();
-                System.Console.Write("Data de nascimento: ");
-                DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+                System.Console.Write("Digite o nome: ");
+                string nome = Console.ReadLine();
 
-                Aluno novoAluno = new Aluno(nomeAluno);
-                novoAluno.DataNascimento = dataNascimento;
+                Aluno aluno = new Aluno(nome);
 
                 int index = 0;
-
-                foreach (Aluno aluno in alunos)
+                bool cadastro = false;
+                foreach (var posiçao in alunos)
                 {
-                    if (aluno != null)
+                    if (posiçao != null) // cheio
                     {
                         index++;
+                        cadastro = false;
                     }
                     else
                     {
-                        break;
+                        cadastro = true;
+                        alunos[index] = aluno;
                     }
                 }
-                alunos[index] = novoAluno;
-
-                alunosCadastrados++;
-                System.Console.WriteLine("Aluno Cadastrado");
-                Console.ReadLine();
-
-            }
-            else
-            {
-                System.Console.WriteLine("Escola está com o máximo de alunos.");
-            }
-        }
-
-        public static void CadastrarSala(ref Sala[] salas, int limiteSalas, ref int salasCadastradas)
-        {
-            if (salasCadastradas < limiteSalas)
-            {
-                System.Console.Write("Digite o número da Sala: ");
-                int numeroSala = int.Parse(Console.ReadLine());
-
-                Sala salaNova = new Sala(numeroSala, 10);
-
-                int index = 0;
-                foreach (Sala sala in salas)
+                if (cadastro)
                 {
-                    if (sala != null)
-                    {
-                        index++;
-                        break;
-                    }
-                }
-                salas[index] = salaNova;
+                    alunosCadastrados++;
+                    System.Console.WriteLine("Cadastrado");
+                    Console.ReadLine();
 
-                salasCadastradas++;
-                System.Console.WriteLine("Sala Cadastrada");
-                Console.ReadLine();
-
-            }
-            else
-            {
-                System.Console.WriteLine("Escola está com o máximo de salas.");
-                Console.ReadLine();
-
-            }
-        }
-
-        public static void AlocarAluno(Aluno[] alunos, Sala[] salas)
-        {
-            System.Console.Write("Digite o nome do Aluno: ");
-            string nomeAluno = Console.ReadLine();
-            System.Console.Write("Digite a sala que o aluno vai ser colocado: ");
-            int numeroSala = int.Parse(Console.ReadLine());
-
-
-            foreach (Aluno aluno in alunos)
-            {
-                if (aluno.Nome == nomeAluno)
-                {
-                    foreach (Sala sala in salas)
-                    {
-                        if (sala.numeroSala == numeroSala)
-                        {
-                            sala.AlocarAluno(nomeAluno);
-                        }
-                        else
-                        {
-                            System.Console.WriteLine("Sala não encontrado");
-                        }
-                    }
                 }
                 else
                 {
-                    System.Console.WriteLine("Aluno não encontrado.");
+                    System.Console.WriteLine("Escola cheia");
+                    Console.ReadLine();
                 }
             }
         }
 
-        public static void RemoverAluno(ref Aluno[] alunos, ref Sala[] salas)
+        public static void CadastrarSala(ref Sala[] salas, ref int salasCadastradas, int limiteSalas)
         {
-            System.Console.WriteLine("Digite o nome do Aluno: ");
-            string nomeAluno = Console.ReadLine();
-
-            foreach (Aluno aluno in alunos)
+            Console.Clear();
+            if (salasCadastradas < limiteSalas)
             {
-                if (aluno.Nome == nomeAluno)
+                System.Console.WriteLine("Cadastro de Sala");
+                System.Console.WriteLine();
+                System.Console.Write("Digite o número da sala: ");
+                int numeroSala = int.Parse(Console.ReadLine());
+
+                Sala sala = new Sala(numeroSala, 10);
+                int index = 0;
+                bool cadastro = false;
+                foreach (var item in salas)
                 {
-                    foreach (Sala sala in salas)
+                    if (item != null)
                     {
-                        for (int i = 0; i < 9; i++)
-                        {
-                            if (sala.Alunos[i] == nomeAluno)
-                            {
-                                sala.RemoverAluno(nomeAluno);
-                            }
-                        }
+                        index++;
+                        cadastro = true;
+                        salas[index] = sala;
                     }
                 }
+                if (cadastro)
+                {
+                    System.Console.WriteLine("Sala cadastrada");
+                    salasCadastradas++;
+                }
+                else
+                {
+                    System.Console.WriteLine("Vetor de sala não suporta mais salas");
+                }
             }
+            else
+            {
+                System.Console.WriteLine("Escola não suporta mais salas");
+            }
+        }
+
+        public static void AlocarAluno()
+        {
+
+        }
+
+        public static void RemoverAluno()
+        {
         }
 
         public static void VerificarSalas()
@@ -217,18 +158,24 @@ namespace SENAIzinho
 
         }
 
-        public static void VerificarAlunos(ref Aluno[] alunos)
+        public static void VerificarAlunos(Aluno[] alunos)
         {
+
             Console.Clear();
-            System.Console.WriteLine("Lista de alunos matriculados:");
-            int count = 0;
-            foreach (Aluno aluno in alunos)
+            if (alunos == null)
             {
-                if (aluno != null)
+                int count = 1;
+                foreach (var item in alunos)
                 {
-                    System.Console.WriteLine($"ID{count,2}: {aluno.Nome,-15}");
+                    System.Console.WriteLine($"ID {count} // Nome: {item.Nome} | Sala:  ");
                     count++;
                 }
+            }
+            else
+            {
+                System.Console.WriteLine("Ninguem foi cadastrado!");
+                Console.ReadLine();
+               
             }
         }
     }

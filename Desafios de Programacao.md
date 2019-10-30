@@ -146,3 +146,7 @@ A aplicação deve criar uma instância da classe registo e permitir que o usuá
 * Busca por aniversário.
 * Listagem dos registros.
 
+SITES PRA TREINAR   
+https://www.urionlinejudge.com.br/judge/pt/categories
+https://www.hackerrank.com/
+

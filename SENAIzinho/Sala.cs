@@ -24,12 +24,14 @@ namespace SENAIzinho
             {
                 foreach (string item in this.Alunos)
                 {
-                    if (item != "")
+                    if (item != "") // cheio
                     {
                         index++;
-                        break;
                     }
-                    this.Alunos[index] = nomeAluno;
+                    else
+                    {
+                        this.Alunos[index] = nomeAluno;
+                    }
                 }
                 this.capacidadeAtual--;
                 return "Cadastro com Sucesso";

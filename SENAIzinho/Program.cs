@@ -8,7 +8,7 @@ namespace SENAIzinho
         {
             int limiteSalas = 10;
             int totalAlunos = 100;
-            Aluno[] alunos = new Aluno[5];
+            Aluno[] alunos = new Aluno[100];
             Sala[] salas = new Sala[10];
             int alunosCadastrados = 0;
             int salasCadastradas = 0;
@@ -40,13 +40,13 @@ namespace SENAIzinho
                         CadastrarSala(ref salas, ref salasCadastradas, limiteSalas);
                         break;
                     case "3":
-                        AlocarAluno();
+                        AlocarAluno(ref alunos, ref salas);
                         break;
                     case "4":
                         RemoverAluno();
                         break;
                     case "5":
-                        VerificarSalas();
+                        VerificarSalas(salas);
                         break;
                     case "6":
                         VerificarAlunos(alunos);
@@ -121,9 +121,13 @@ namespace SENAIzinho
                 bool cadastro = false;
                 foreach (var item in salas)
                 {
-                    if (item != null)
+                    if (item != null) // cheio
                     {
                         index++;
+                        cadastro = false;
+                    }
+                    else
+                    {
                         cadastro = true;
                         salas[index] = sala;
                     }
@@ -132,20 +136,66 @@ namespace SENAIzinho
                 {
                     System.Console.WriteLine("Sala cadastrada");
                     salasCadastradas++;
+                    Console.ReadLine();
                 }
                 else
                 {
                     System.Console.WriteLine("Vetor de sala não suporta mais salas");
+                    Console.ReadLine();
                 }
             }
             else
             {
                 System.Console.WriteLine("Escola não suporta mais salas");
+                Console.ReadLine();
             }
         }
 
-        public static void AlocarAluno()
+        public static void AlocarAluno(ref Aluno[] alunos, ref Sala[] salas)
         {
+            Console.Clear();
+            System.Console.Write("Digite o nome do aluno: ");
+            string nome = Console.ReadLine();
+            System.Console.Write("Digite a sala: ");
+            int numeroSala = int.Parse(Console.ReadLine());
+
+            bool alunoExist = false;
+            bool salaExist = false;
+            foreach (var aluno in alunos)
+            {
+                if (nome == aluno.Nome)
+                {
+                    alunoExist = true;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            foreach (var item in salas)
+            {
+                if (numeroSala == item.numeroSala)
+                {
+                    salaExist = true;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            if (salaExist && alunoExist)
+            {
+                foreach (Sala sala in salas)
+                {
+                    if (numeroSala == sala.numeroSala)
+                    {
+                        sala.AlocarAluno(nome);
+                    }
+                }
+            }
+
+
 
         }
 
@@ -153,16 +203,31 @@ namespace SENAIzinho
         {
         }
 
-        public static void VerificarSalas()
+        public static void VerificarSalas(Sala[] salas)
         {
+            Console.Clear();
+            if (salas != null)
+            {
+                int count = 1;
+                foreach (var item in salas)
+                {
+                    System.Console.WriteLine($"ID {count} // Sala: {item.numeroSala} ");
+                    count++;
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Nenhuma sala foi cadastrada!");
+                Console.ReadLine();
 
+            }
         }
 
         public static void VerificarAlunos(Aluno[] alunos)
         {
 
             Console.Clear();
-            if (alunos == null)
+            if (alunos != null)
             {
                 int count = 1;
                 foreach (var item in alunos)
@@ -175,7 +240,7 @@ namespace SENAIzinho
             {
                 System.Console.WriteLine("Ninguem foi cadastrado!");
                 Console.ReadLine();
-               
+
             }
         }
     }

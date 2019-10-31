@@ -186,11 +186,11 @@ namespace SENAIzinho
 
             if (salaExist && alunoExist)
             {
-                foreach (Sala sala in salas)
+                foreach (var item in salas)
                 {
-                    if (numeroSala == sala.numeroSala)
+                    if (numeroSala == item.numeroSala)
                     {
-                        sala.AlocarAluno(nome);
+                        item.AlocarAluno(nome);
                     }
                 }
             }
@@ -206,42 +206,32 @@ namespace SENAIzinho
         public static void VerificarSalas(Sala[] salas)
         {
             Console.Clear();
-            if (salas != null)
+            int count = 1;
+            foreach (var item in salas)
             {
-                int count = 1;
-                foreach (var item in salas)
+                if (item != null)
                 {
                     System.Console.WriteLine($"ID {count} // Sala: {item.numeroSala} ");
                     count++;
                 }
             }
-            else
-            {
-                System.Console.WriteLine("Nenhuma sala foi cadastrada!");
-                Console.ReadLine();
-
-            }
+            Console.ReadLine();
         }
 
         public static void VerificarAlunos(Aluno[] alunos)
         {
-
             Console.Clear();
-            if (alunos != null)
+            int count = 1;
+            foreach (var item in alunos)
             {
-                int count = 1;
-                foreach (var item in alunos)
+                if (item != null)
                 {
                     System.Console.WriteLine($"ID {count} // Nome: {item.Nome} | Sala:  ");
                     count++;
                 }
             }
-            else
-            {
-                System.Console.WriteLine("Ninguem foi cadastrado!");
-                Console.ReadLine();
+            Console.ReadLine();
 
-            }
         }
     }
 }

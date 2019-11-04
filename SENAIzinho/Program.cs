@@ -43,7 +43,7 @@ namespace SENAIzinho
                         AlocarAluno(ref alunos, ref salas);
                         break;
                     case "4":
-                        RemoverAluno();
+                        RemoverAluno(ref alunos, ref salas);
                         break;
                     case "5":
                         VerificarSalas(salas);
@@ -121,16 +121,12 @@ namespace SENAIzinho
                 bool cadastro = false;
                 foreach (var item in salas)
                 {
-                    if (item != null) // cheio
+                    if (item == null)
                     {
-                        index++;
-                        cadastro = false;
-                    }
-                    else
-                    {
-                        cadastro = true;
                         salas[index] = sala;
+                        cadastro = true;
                     }
+                    index++;
                 }
                 if (cadastro)
                 {
@@ -154,66 +150,115 @@ namespace SENAIzinho
         public static void AlocarAluno(ref Aluno[] alunos, ref Sala[] salas)
         {
             Console.Clear();
+            System.Console.WriteLine("Alocar Aluno");
+            System.Console.WriteLine();
             System.Console.Write("Digite o nome do aluno: ");
-            string nome = Console.ReadLine();
+            string nomeAluno = Console.ReadLine();
             System.Console.Write("Digite a sala: ");
             int numeroSala = int.Parse(Console.ReadLine());
 
             bool alunoExist = false;
             bool salaExist = false;
-            foreach (var aluno in alunos)
+
+            foreach (var item in alunos)
             {
-                if (nome == aluno.Nome)
+                if (item != null)
                 {
-                    alunoExist = true;
+                    if (item.Nome == nomeAluno)
+                    {
+                        alunoExist = true;
+                        // item.numeroSala = numeroSala;
+                    }
                 }
-                else
-                {
-                    break;
-                }
+
             }
+            int posicaoSala;
             foreach (var item in salas)
             {
-                if (numeroSala == item.numeroSala)
+                int index = 0;
+                if (item != null)
                 {
-                    salaExist = true;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            if (salaExist && alunoExist)
-            {
-                foreach (var item in salas)
-                {
-                    if (numeroSala == item.numeroSala)
+                    if (item.numeroSala == numeroSala)
                     {
-                        item.AlocarAluno(nome);
+                        salaExist = true;
+                        posicaoSala = index;
+                        System.Console.WriteLine(salas[posicaoSala].AlocarAluno(nomeAluno));
+                        // salas[posicaoSala].AlocarAluno(nomeAluno);
                     }
                 }
             }
-
-
-
+            // if (salaExist && alunoExist)
+            // {
+            //     int index = 0;
+            //     foreach (var item in salas)
+            //     {
+            //         if (item != null)
+            //         {
+            //             if (item.numeroSala == numeroSala)
+            //             {
+            //                 salas[posicaoSala].AlocarAluno(nomeAluno);
+            //                 System.Console.WriteLine(item.AlocarAluno(nomeAluno));
+            // salas[index].Alunos[index] = nomeAluno;
+            // System.Console.WriteLine("aLOCADO");
+            //                 break;
+            //             }
+            //         }
+            //         index++;
+            //     }
+            // }
+            Console.ReadLine();
         }
 
-        public static void RemoverAluno()
+        public static void RemoverAluno(ref Aluno[] alunos, ref Sala[] salas)
         {
+            Console.Clear();
+            System.Console.WriteLine("Remover Aluno");
+            System.Console.WriteLine();
+            System.Console.Write("Digite o nome do aluno: ");
+            string nome = Console.ReadLine();
+            System.Console.Write("Digite a Sala: ");
+            int numeroSala = int.Parse(Console.ReadLine());
+
+            bool alunoExist = false;
+
+            foreach (var item in alunos)
+            {
+                if (item != null)
+                {
+                    if (item.Nome == nome)
+                    {
+                        alunoExist = true;
+                    }
+                }
+
+            }
+            foreach (var item in salas)
+            {
+                if (item != null)
+                {
+                    if (item.numeroSala == numeroSala)
+                    {
+                        if (alunoExist)
+                        {
+                            System.Console.WriteLine(item.RemoverAluno(nome));
+                        }
+                    }
+                }
+            }
+            Console.ReadLine();
+
+
         }
 
         public static void VerificarSalas(Sala[] salas)
         {
             Console.Clear();
+            // System.Console.Write("Qual sala listar? ");
+            // int numeroSala = int.Parse(Console.ReadLine());
             int count = 1;
             foreach (var item in salas)
             {
-                if (item != null)
-                {
-                    System.Console.WriteLine($"ID {count} // Sala: {item.numeroSala} ");
-                    count++;
-                }
+                System.Console.WriteLine($"Sala {count++} \n{item.Alunos.ToString()}");
             }
             Console.ReadLine();
         }
@@ -226,7 +271,7 @@ namespace SENAIzinho
             {
                 if (item != null)
                 {
-                    System.Console.WriteLine($"ID {count} // Nome: {item.Nome} | Sala:  ");
+                    System.Console.WriteLine($"ID {count} // Nome: {item.Nome} | Sala: {item.numeroSala} ");
                     count++;
                 }
             }

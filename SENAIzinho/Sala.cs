@@ -19,61 +19,54 @@ namespace SENAIzinho
 
         public string AlocarAluno(string nomeAluno)
         {
-            int index = 0;
             if (this.capacidadeAtual > 0)
             {
-                foreach (string item in this.Alunos)
+                int index = 0;
+                foreach (var item in this.Alunos)
                 {
-                    if (item != "") // cheio
-                    {
-                        index++;
-                    }
-                    else
+                    if (item == "")
                     {
                         this.Alunos[index] = nomeAluno;
+                        break;
                     }
+                    index++;
                 }
-                this.capacidadeAtual--;
-                return "Cadastro com Sucesso";
+                return "Alocado com sucesso";
             }
-            else
-            {
-                return "Sala cheia";
-            }
+            return "Sala cheia";
         }
 
         public string RemoverAluno(string nomeAluno)
         {
-            int index = 0;
-
-            if (this.capacidadeAtual == this.capacidadeTotal)
+            if (this.capacidadeAtual != 0)
             {
-                return "Sala vazia";
-            }
-
-            foreach (string aluno in this.Alunos)
-            {
-                if (nomeAluno == aluno)
+                int index = 0;
+                foreach (var item in this.Alunos)
                 {
-                    this.Alunos[index] = "";
-                    return "Aluno removido.";
+                    if (item == nomeAluno)
+                    {
+                        this.Alunos[index] = "";
+                        break;
+                    }
+                    index++;
                 }
-                index++;
+                return "Removido com sucesso";
             }
-            return "Aluno não encontrado.";
+            return "Sala vazia";
+
         }
 
         public string MostrarAluno()
         {
             string listaAlunos = "";
-            foreach (string aluno in this.Alunos)
+            foreach (string item in this.Alunos)
             {
-                if (aluno != "")
+                if (item != "")
                 {
-                    listaAlunos = listaAlunos + aluno + " ";
+                    listaAlunos = item;
+                    // System.Console.WriteLine($"{count++} {listaAlunos}");
                 }
             }
-            listaAlunos.TrimEnd();
             return listaAlunos;
         }
     }

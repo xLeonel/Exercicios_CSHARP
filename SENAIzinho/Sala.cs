@@ -51,9 +51,9 @@ namespace SENAIzinho
                 return "Sala vazia";
             }
 
-            foreach (string aluno in this.Alunos)
+            foreach (string item in this.Alunos)
             {
-                if (nomeAluno == aluno)
+                if (nomeAluno == item)
                 {
                     this.Alunos[index] = "";
                     return "Aluno removido.";
@@ -70,10 +70,10 @@ namespace SENAIzinho
             {
                 if (aluno != "")
                 {
-                    listaAlunos = listaAlunos + aluno + " ";
+                    listaAlunos = aluno;
                 }
             }
-            listaAlunos.TrimEnd();
+            // listaAlunos.TrimEnd();
             return listaAlunos;
         }
     }

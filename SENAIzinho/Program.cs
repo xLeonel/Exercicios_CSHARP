@@ -117,10 +117,10 @@ namespace SENAIzinho
                 int numeroSala = int.Parse(Console.ReadLine());
 
                 Sala sala = new Sala(numeroSala, 10);
-                int index = 0;
                 bool cadastro = false;
                 foreach (var item in salas)
                 {
+                    int index = 0;
                     if (item == null)
                     {
                         salas[index] = sala;
@@ -172,7 +172,7 @@ namespace SENAIzinho
                 }
 
             }
-            int posicaoSala;
+            string result = "";
             foreach (var item in salas)
             {
                 int index = 0;
@@ -181,12 +181,14 @@ namespace SENAIzinho
                     if (item.numeroSala == numeroSala)
                     {
                         salaExist = true;
-                        posicaoSala = index;
-                        System.Console.WriteLine(salas[posicaoSala].AlocarAluno(nomeAluno));
+                        result = salas[index].AlocarAluno(nomeAluno);
+                        // System.Console.WriteLine(salas[index].AlocarAluno(nomeAluno));
                         // salas[posicaoSala].AlocarAluno(nomeAluno);
                     }
                 }
+                index++;
             }
+            System.Console.WriteLine(result);
             // if (salaExist && alunoExist)
             // {
             //     int index = 0;
@@ -246,19 +248,28 @@ namespace SENAIzinho
                 }
             }
             Console.ReadLine();
-
-
         }
 
         public static void VerificarSalas(Sala[] salas)
         {
             Console.Clear();
-            // System.Console.Write("Qual sala listar? ");
-            // int numeroSala = int.Parse(Console.ReadLine());
-            int count = 1;
+            System.Console.Write("Qual sala listar? ");
+            int numeroSala = int.Parse(Console.ReadLine());
+            Console.Clear();
+
             foreach (var item in salas)
             {
-                System.Console.WriteLine($"Sala {count++} \n{item.Alunos.ToString()}");
+                int index = 0;
+                if (item != null)
+                {
+                    if (item.numeroSala == numeroSala)
+                    {
+                        System.Console.WriteLine($"Sala {numeroSala}");
+                        System.Console.WriteLine(item.Alunos);
+                    }
+                }
+                index++;
+
             }
             Console.ReadLine();
         }

@@ -40,8 +40,17 @@ namespace SENAIzinho
         {
             if (this.capacidadeAtual != 0)
             {
+<<<<<<< HEAD
                 int index = 0;
                 foreach (var item in this.Alunos)
+=======
+                return "Sala vazia";
+            }
+
+            foreach (string item in this.Alunos)
+            {
+                if (nomeAluno == item)
+>>>>>>> bf09d4c547b20e54893837aaac03336014820daa
                 {
                     if (item == nomeAluno)
                     {
@@ -63,10 +72,17 @@ namespace SENAIzinho
             {
                 if (item != "")
                 {
+<<<<<<< HEAD
                     listaAlunos = item;
                     // System.Console.WriteLine($"{count++} {listaAlunos}");
                 }
             }
+=======
+                    listaAlunos = aluno;
+                }
+            }
+            // listaAlunos.TrimEnd();
+>>>>>>> bf09d4c547b20e54893837aaac03336014820daa
             return listaAlunos;
         }
     }

@@ -164,10 +164,17 @@ namespace SENAIzinho
             {
                 if (item != null)
                 {
+<<<<<<< HEAD
                     if (item.Nome == nomeAluno)
                     {
                         alunoExist = true;
                         // item.numeroSala = numeroSala;
+=======
+                    if (item.Nome == nome)
+                    {
+                        alunoExist = true;
+                        item.numeroSala = numeroSala;
+>>>>>>> bf09d4c547b20e54893837aaac03336014820daa
                     }
                 }
 
@@ -175,12 +182,16 @@ namespace SENAIzinho
             string result = "";
             foreach (var item in salas)
             {
+<<<<<<< HEAD
                 int index = 0;
+=======
+>>>>>>> bf09d4c547b20e54893837aaac03336014820daa
                 if (item != null)
                 {
                     if (item.numeroSala == numeroSala)
                     {
                         salaExist = true;
+<<<<<<< HEAD
                         result = salas[index].AlocarAluno(nomeAluno);
                         // System.Console.WriteLine(salas[index].AlocarAluno(nomeAluno));
                         // salas[posicaoSala].AlocarAluno(nomeAluno);
@@ -248,6 +259,97 @@ namespace SENAIzinho
                 }
             }
             Console.ReadLine();
+=======
+                    }
+                }
+            }
+
+            if (alunoExist && salaExist)
+            {
+                foreach (var sala in salas)
+                {
+                    if (sala != null)
+                    {
+                        if (sala.numeroSala == numeroSala)
+                        {
+                            System.Console.WriteLine(sala.AlocarAluno(nome));
+                        }
+                    }
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Aluno ou Sala não existe");
+            }
+            Console.ReadLine();
+        }
+
+        public static void RemoverAluno(ref Aluno[] alunos, ref Sala[] salas)
+        {
+            Console.Clear();
+            System.Console.WriteLine("Remover Aluno");
+            System.Console.WriteLine();
+            System.Console.WriteLine("Digite o nome do aluno: ");
+            string nome = Console.ReadLine();
+            System.Console.WriteLine("Digite a Sala: ");
+            int numeroSala = int.Parse(Console.ReadLine());
+
+            bool alunoExist = false;
+            bool salaExist = false;
+
+            foreach (var item in alunos)
+            {
+                if (item != null)
+                {
+                    if (item.Nome == nome)
+                    {
+                        alunoExist = true;
+                    }
+                }
+
+            }
+            foreach (var item in salas)
+            {
+                if (item != null)
+                {
+                    if (item.numeroSala == numeroSala)
+                    {
+                        salaExist = true;
+                    }
+                }
+            }
+
+            if (alunoExist && salaExist)
+            {
+                foreach (var aluno in alunos)
+                {
+                    if (aluno != null)
+                    {
+                        if (aluno.Nome == nome)
+                        {
+                            foreach (var sala in salas)
+                            {
+                                if (sala != null)
+                                {
+                                    if (sala.numeroSala == numeroSala)
+                                    {
+                                        System.Console.WriteLine(sala.RemoverAluno(nome));
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Aluno ou Sala não existe");
+            }
+            Console.ReadLine();
+
+
+>>>>>>> bf09d4c547b20e54893837aaac03336014820daa
         }
 
         public static void VerificarSalas(Sala[] salas)
@@ -262,11 +364,17 @@ namespace SENAIzinho
                 int index = 0;
                 if (item != null)
                 {
+<<<<<<< HEAD
                     if (item.numeroSala == numeroSala)
                     {
                         System.Console.WriteLine($"Sala {numeroSala}");
                         System.Console.WriteLine(item.Alunos);
                     }
+=======
+                    System.Console.WriteLine($"ID {count} // Sala: {item.numeroSala} ");
+                    item.MostrarAluno();
+                    count++;
+>>>>>>> bf09d4c547b20e54893837aaac03336014820daa
                 }
                 index++;
 
